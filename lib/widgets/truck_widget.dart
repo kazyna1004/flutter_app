@@ -63,7 +63,7 @@ class TruckWidget extends StatelessWidget {
                     bottomRight: Radius.circular(4),
                   ),
                   // Обводка для объема
-                  border: Border.all(color: toColor.withOpacity(0.8), width: 3),
+                  border: Border.all(color: toColor.withValues(alpha: 0.8), width: 3),
                 ),
                 child: Stack(
                   children: [
@@ -111,7 +111,7 @@ class TruckWidget extends StatelessWidget {
                     bottomLeft: Radius.circular(4),
                     bottomRight: Radius.circular(4),
                   ),
-                  border: Border.all(color: toColor.withOpacity(0.8), width: 3),
+                  border: Border.all(color: toColor.withValues(alpha: 0.8), width: 3),
                 ),
                 // Окно кабины с водителем
                 child: Center(

@@ -44,7 +44,7 @@ class TruckCustomizerScreen extends StatelessWidget {
               // ═══════════════════════════════════════════════════════════════
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withValues(alpha: 0.6),
                 child: Row(
                   children: [
                     GestureDetector(
@@ -87,7 +87,7 @@ class TruckCustomizerScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.08),
+                              color: Colors.black.withValues(alpha: 0.08),
                               blurRadius: 12,
                               offset: const Offset(0, 4),
                             ),
@@ -248,7 +248,11 @@ class _ColorButton extends StatelessWidget {
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
-        transform: Matrix4.identity()..scale(isSelected ? 1.05 : 1.0),
+        transform: Matrix4.diagonal3Values(
+          isSelected ? 1.05 : 1.0,
+          isSelected ? 1.05 : 1.0,
+          1.0,
+        ),
         transformAlignment: Alignment.center,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
@@ -262,14 +266,14 @@ class _ColorButton extends StatelessWidget {
           boxShadow: isSelected
               ? [
                   BoxShadow(
-                    color: Color(truckColor.from).withOpacity(0.6),
+                    color: Color(truckColor.from).withValues(alpha: 0.6),
                     blurRadius: 12,
                     spreadRadius: 2,
                   ),
                 ]
               : [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     blurRadius: 6,
                   ),
                 ],
@@ -308,7 +312,11 @@ class _StickerButton extends StatelessWidget {
       onTap: onTap,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 150),
-        transform: Matrix4.identity()..scale(isSelected ? 1.1 : 1.0),
+        transform: Matrix4.diagonal3Values(
+          isSelected ? 1.1 : 1.0,
+          isSelected ? 1.1 : 1.0,
+          1.0,
+        ),
         transformAlignment: Alignment.center,
         decoration: BoxDecoration(
           color: isSelected ? const Color(0xFFe0e7ff) : Colors.white,
@@ -318,7 +326,7 @@ class _StickerButton extends StatelessWidget {
               : null,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.08),
+              color: Colors.black.withValues(alpha: 0.08),
               blurRadius: 6,
               offset: const Offset(0, 2),
             ),

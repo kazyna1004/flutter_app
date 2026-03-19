@@ -116,7 +116,7 @@ class _GamePlayScreenState extends State<GamePlayScreen> {
               // ═══════════════════════════════════════════════════════════════
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withValues(alpha: 0.6),
                 child: Row(
                   children: [
                     // Кнопка назад
@@ -200,7 +200,7 @@ class _GamePlayScreenState extends State<GamePlayScreen> {
                                   borderRadius: BorderRadius.circular(28),
                                   boxShadow: [
                                     BoxShadow(
-                                      color: Colors.black.withOpacity(0.15),
+                                      color: Colors.black.withValues(alpha: 0.15),
                                       blurRadius: 20,
                                       offset: const Offset(0, 8),
                                     ),
@@ -274,7 +274,7 @@ class _GamePlayScreenState extends State<GamePlayScreen> {
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
+                                  color: Colors.black.withValues(alpha: 0.2),
                                   blurRadius: 12,
                                   offset: const Offset(0, 4),
                                 ),
@@ -324,7 +324,7 @@ class _GamePlayScreenState extends State<GamePlayScreen> {
                   borderRadius: BorderRadius.circular(28),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.12),
+                      color: Colors.black.withValues(alpha: 0.12),
                       blurRadius: 24,
                       offset: const Offset(0, 8),
                     ),
@@ -459,7 +459,7 @@ class _BinButtonState extends State<_BinButton>
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: Color(bin.gradientColors.first).withOpacity(0.4),
+                color: Color(bin.gradientColors.first).withValues(alpha: 0.4),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),
@@ -583,7 +583,7 @@ class _GradientButtonState extends State<_GradientButton>
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: widget.colors.first.withOpacity(0.4),
+                color: widget.colors.first.withValues(alpha: 0.4),
                 blurRadius: 12,
                 offset: const Offset(0, 4),
               ),

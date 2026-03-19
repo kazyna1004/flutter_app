@@ -131,7 +131,7 @@ class _IntroScreenState extends State<IntroScreen>
                         Shadow(
                           offset: const Offset(3, 3),
                           blurRadius: 0,
-                          color: Colors.black.withOpacity(0.15),
+                          color: Colors.black.withValues(alpha: 0.15),
                         ),
                       ],
                     ),

@@ -196,7 +196,7 @@ class _SpeedChallengeScreenState extends State<SpeedChallengeScreen> {
               // ═══════════════════════════════════════════════════════════════
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withValues(alpha: 0.6),
                 child: Row(
                   children: [
                     // Таймер - красный когда мало времени
@@ -265,7 +265,7 @@ class _SpeedChallengeScreenState extends State<SpeedChallengeScreen> {
                                 borderRadius: BorderRadius.circular(24),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.12),
+                                    color: Colors.black.withValues(alpha: 0.12),
                                     blurRadius: 16,
                                     offset: const Offset(0, 6),
                                   ),
@@ -331,7 +331,7 @@ class _SpeedChallengeScreenState extends State<SpeedChallengeScreen> {
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
+                                  color: Colors.black.withValues(alpha: 0.2),
                                   blurRadius: 8,
                                 ),
                               ],
@@ -379,7 +379,7 @@ class _SpeedChallengeScreenState extends State<SpeedChallengeScreen> {
                   borderRadius: BorderRadius.circular(28),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 24,
                       offset: const Offset(0, 8),
                     ),
@@ -485,7 +485,7 @@ class _BinTapButtonState extends State<_BinTapButton>
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
-                color: Color(bin.gradientColors.first).withOpacity(0.4),
+                color: Color(bin.gradientColors.first).withValues(alpha: 0.4),
                 blurRadius: 8,
                 offset: const Offset(0, 3),
               ),
@@ -535,7 +535,7 @@ class _GradButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: colors.first.withOpacity(0.4),
+              color: colors.first.withValues(alpha: 0.4),
               blurRadius: 12,
               offset: const Offset(0, 4),
             ),

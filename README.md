@@ -1,20 +1,53 @@
-<<<<<<< HEAD
-# flutter_app
+# EcoSort
 
-A new Flutter project.
+EcoSort is a Flutter-based mobile application that implements a simple game for waste sorting. The application is designed to demonstrate basic game mechanics, user interaction, and UI structuring in Flutter.
+
+## Description
+
+The user is presented with different types of waste items and must drag them into the correct recycling containers. The game includes a timer and scoring system.
+
+## Features
+
+* Drag and drop interaction
+* Score tracking
+* Countdown timer
+* Multiple environments (Beach, Forest, City, Park)
+* Random item generation
+
+## Technologies
+
+* Flutter
+* Dart
+
+## Project Structure
+
+```
+lib/
+ ├ screens/
+ │   ├ loading_screen.dart
+ │   ├ menu_screen.dart
+ │   └ game_screen.dart
+ │
+ ├ widgets/
+ └ main.dart
+```
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Install Flutter SDK
+2. Clone the repository
+3. Run the following commands:
 
-A few resources to get you started if this is your first Flutter project:
+```
+flutter pub get
+flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Purpose
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# flutter_app
->>>>>>> bc5ca64b179ea70dd61e11ab8b916e80127da0d1
+The project demonstrates:
+
+* basic Flutter application architecture
+* state management within a simple game loop
+* handling user input with drag-and-drop mechanics
+

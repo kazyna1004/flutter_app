@@ -24,18 +24,29 @@ class MemoryMatchScreen extends StatefulWidget {
 class _CardData {
   final int id;
   final String emoji;
-  bool matched = false;
-  bool flipped = false;
+  final bool matched;
+  final bool flipped;
 
-  _CardData({
+  const _CardData({
     required this.id,
     required this.emoji,
+    this.matched = false,
+    this.flipped = false,
   });
+
+  _CardData copyWith({bool? matched, bool? flipped}) {
+    return _CardData(
+      id: id,
+      emoji: emoji,
+      matched: matched ?? this.matched,
+      flipped: flipped ?? this.flipped,
+    );
+  }
 }
 
 class _MemoryMatchScreenState extends State<MemoryMatchScreen> {
   late List<_CardData> _cards;
-  List<int> _selected = [];
+  final List<int> _selected = [];
   int _moves = 0;
   bool _done = false;
   bool _checking = false;
@@ -65,7 +76,7 @@ class _MemoryMatchScreenState extends State<MemoryMatchScreen> {
     if (card.flipped || card.matched) return;
 
     setState(() {
-      card.flipped = true;
+      _cards[id] = card.copyWith(flipped: true);
       _selected.add(id);
     });
 
@@ -78,8 +89,8 @@ class _MemoryMatchScreenState extends State<MemoryMatchScreen> {
 
       if (_cards[a].emoji == _cards[b].emoji) {
         setState(() {
-          _cards[a].matched = true;
-          _cards[b].matched = true;
+          _cards[a] = _cards[a].copyWith(matched: true);
+          _cards[b] = _cards[b].copyWith(matched: true);
           _selected.clear();
           _checking = false;
 
@@ -92,8 +103,8 @@ class _MemoryMatchScreenState extends State<MemoryMatchScreen> {
           if (!mounted) return;
 
           setState(() {
-            _cards[a].flipped = false;
-            _cards[b].flipped = false;
+            _cards[a] = _cards[a].copyWith(flipped: false);
+            _cards[b] = _cards[b].copyWith(flipped: false);
             _selected.clear();
             _checking = false;
           });

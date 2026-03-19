@@ -85,7 +85,7 @@ class _EcoQuizScreenState extends State<EcoQuizScreen> {
               // ═══════════════════════════════════════════════════════════════
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withValues(alpha: 0.6),
                 child: Row(
                   children: [
                     GestureDetector(
@@ -141,7 +141,7 @@ class _EcoQuizScreenState extends State<EcoQuizScreen> {
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.08),
+                              color: Colors.black.withValues(alpha: 0.08),
                               blurRadius: 12,
                               offset: const Offset(0, 4),
                             ),
@@ -276,7 +276,7 @@ class _EcoQuizScreenState extends State<EcoQuizScreen> {
                   borderRadius: BorderRadius.circular(28),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 24,
                       offset: const Offset(0, 8),
                     ),

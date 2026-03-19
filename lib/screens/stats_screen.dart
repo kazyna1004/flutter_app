@@ -102,7 +102,7 @@ class StatsScreen extends StatelessWidget {
               // ═══════════════════════════════════════════════════════════════
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withValues(alpha: 0.6),
                 child: Row(
                   children: [
                     GestureDetector(
@@ -143,7 +143,7 @@ class StatsScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(24),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.08),
+                              color: Colors.black.withValues(alpha: 0.08),
                               blurRadius: 12,
                               offset: const Offset(0, 4),
                             ),
@@ -290,7 +290,7 @@ class _StatCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.06),
+            color: Colors.black.withValues(alpha: 0.06),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -357,7 +357,7 @@ class _AchievementTile extends StatelessWidget {
             achievement.emoji,
             style: TextStyle(
               fontSize: 24,
-              color: unlocked ? null : Colors.black.withOpacity(0.3),
+              color: unlocked ? null : Colors.black.withValues(alpha: 0.3),
             ),
           ),
           const SizedBox(width: 12),

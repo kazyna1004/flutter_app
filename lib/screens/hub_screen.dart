@@ -52,9 +52,9 @@ class HubScreen extends StatelessWidget {
                 // ═══════════════════════════════════════════════════════════════
                 // Заголовок приложения
                 // ═══════════════════════════════════════════════════════════════
-                Column(
+                const Column(
                   children: [
-                    const Text(
+                    Text(
                       'Clean Truck 🚛',
                       style: TextStyle(
                         fontSize: 44,
@@ -62,8 +62,8 @@ class HubScreen extends StatelessWidget {
                         color: Color(0xFF059669),
                       ),
                     ),
-                    const SizedBox(height: 4),
-                    const Text(
+                    SizedBox(height: 4),
+                    Text(
                       'Choose Your Adventure!',
                       style: TextStyle(
                         fontSize: 20,
@@ -82,11 +82,11 @@ class HubScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.7),
+                    color: Colors.white.withValues(alpha: 0.7),
                     borderRadius: BorderRadius.circular(24),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.08),
+                        color: Colors.black.withValues(alpha: 0.08),
                         blurRadius: 12,
                         offset: const Offset(0, 4),
                       ),
@@ -290,7 +290,7 @@ class _LocationButtonState extends State<_LocationButton>
             borderRadius: BorderRadius.circular(24),
             boxShadow: [
               BoxShadow(
-                color: Color(loc.gradientColors.first).withOpacity(0.4),
+                color: Color(loc.gradientColors.first).withValues(alpha: 0.4),
                 blurRadius: 16,
                 offset: const Offset(0, 6),
               ),
@@ -303,7 +303,7 @@ class _LocationButtonState extends State<_LocationButton>
                 width: 60,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.3),
+                  color: Colors.white.withValues(alpha: 0.3),
                   shape: BoxShape.circle,
                 ),
                 child: Center(
@@ -412,7 +412,7 @@ class _MiniGameButtonState extends State<_MiniGameButton>
             borderRadius: BorderRadius.circular(18),
             boxShadow: [
               BoxShadow(
-                color: widget.gradientColors.first.withOpacity(0.4),
+                color: widget.gradientColors.first.withValues(alpha: 0.4),
                 blurRadius: 8,
                 offset: const Offset(0, 4),
               ),
