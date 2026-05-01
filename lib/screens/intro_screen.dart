@@ -182,21 +182,24 @@ class _IntroScreenState extends State<IntroScreen>
               ),
             ),
             
-            // ═══════════════════════════════════════════════════════════════
-            // Анимированный грузовик
-            // ═══════════════════════════════════════════════════════════════
-            Positioned(
-              bottom: 128,
-              // Движение грузовика слева направо
-              left: size.width * (-0.25 + _truckPercent * 1.35),
-              child: Transform.translate(
-                offset: Offset(0, _bounce), // Эффект тряски
-                child: const TruckWidget(
-                  colorId: 'green',
-                  stickerIds: [],
+              // ═══════════════════════════════════════════════════════════════
+              // Анимированный грузовик
+              // ═══════════════════════════════════════════════════════════════
+              Positioned(
+                bottom: 128,
+                // Движение грузовика слева направо
+                left: size.width * (-0.25 + _truckPercent * 1.35),
+                child: Transform.translate(
+                  offset: Offset(0, _bounce), // Эффект тряски
+                  child: Transform.scale(
+                    scaleX: -1, // Отражение по горизонтали — грузовик смотрит вперёд
+                    child: const TruckWidget(
+                      colorId: 'green',
+                      stickerIds: [],
+                    ),
+                  ),
                 ),
               ),
-            ),
             
             // ═══════════════════════════════════════════════════════════════
             // Индикатор загрузки (точки)
