@@ -7,6 +7,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/game_data.dart';
+import '../widgets/gradient_button.dart';
 
 /// Экран скоростного испытания
 /// Мини-игра на время - нужно отсортировать максимум за 30 секунд
@@ -162,7 +163,7 @@ class _SpeedChallengeScreenState extends State<SpeedChallengeScreen> {
                       style: TextStyle(fontSize: 16, color: Color(0xFF4b5563)),
                     ),
                     const SizedBox(height: 40),
-                    _GradButton(
+                    GradientButton(
                       label: 'Start! ⚡',
                       colors: const [Color(0xFFfb923c), Color(0xFFef4444)],
                       onTap: _start,
@@ -414,7 +415,7 @@ class _SpeedChallengeScreenState extends State<SpeedChallengeScreen> {
                     const SizedBox(height: 28),
                     SizedBox(
                       width: double.infinity,
-                      child: _GradButton(
+                      child: GradientButton(
                         label: 'Back to Hub 🏠',
                         colors: const [Color(0xFFfb923c), Color(0xFFef4444)],
                         onTap: () => widget.onComplete(_score),
@@ -505,50 +506,6 @@ class _BinTapButtonState extends State<_BinTapButton>
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Кнопка с градиентом
-class _GradButton extends StatelessWidget {
-  final String label;
-  final List<Color> colors;
-  final VoidCallback onTap;
-
-  const _GradButton({
-    required this.label,
-    required this.colors,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: colors),
-          borderRadius: BorderRadius.circular(24),
-          boxShadow: [
-            BoxShadow(
-              color: colors.first.withValues(alpha: 0.4),
-              blurRadius: 12,
-              offset: const Offset(0, 4),
-            ),
-          ],
-        ),
-        child: Center(
-          child: Text(
-            label,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
           ),
         ),
       ),

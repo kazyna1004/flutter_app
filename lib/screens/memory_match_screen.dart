@@ -6,6 +6,7 @@
 
 import 'package:flutter/material.dart';
 import '../models/game_data.dart';
+import '../widgets/gradient_button.dart';
 
 class MemoryMatchScreen extends StatefulWidget {
   final VoidCallback onBack;
@@ -192,9 +193,13 @@ class _MemoryMatchScreenState extends State<MemoryMatchScreen> {
             Text('Score: $_score'),
             Text('Moves: $_moves'),
             const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () => widget.onComplete(_score),
-              child: const Text('Back to Hub'),
+            SizedBox(
+              width: 200,
+              child: GradientButton(
+                label: 'Back to Hub 🏠',
+                colors: const [Color(0xFFa855f7), Color(0xFFec4899)],
+                onTap: () => widget.onComplete(_score),
+              ),
             ),
           ],
         ),

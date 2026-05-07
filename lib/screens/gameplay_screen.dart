@@ -6,6 +6,7 @@
 
 import 'package:flutter/material.dart';
 import '../models/game_data.dart';
+import '../widgets/gradient_button.dart';
 
 /// Экран игрового процесса (сортировка отходов)
 /// Основная механика игры
@@ -380,7 +381,7 @@ class _GamePlayScreenState extends State<GamePlayScreen> {
                     // Кнопка возврата в меню
                     SizedBox(
                       width: double.infinity,
-                      child: _GradientButton(
+                      child: GradientButton(
                         label: 'Back to Hub 🏠',
                         colors: const [Color(0xFF34d399), Color(0xFF059669)],
                         onTap: () => widget.onComplete(_score, _items.length, acc),
@@ -523,83 +524,6 @@ class _StatBox extends StatelessWidget {
             style: const TextStyle(fontSize: 11, color: Color(0xFF6b7280)),
           ),
         ],
-      ),
-    );
-  }
-}
-
-/// Кнопка с градиентом
-class _GradientButton extends StatefulWidget {
-  final String label;
-  final List<Color> colors;
-  final VoidCallback onTap;
-
-  const _GradientButton({
-    required this.label,
-    required this.colors,
-    required this.onTap,
-  });
-
-  @override
-  State<_GradientButton> createState() => _GradientButtonState();
-}
-
-class _GradientButtonState extends State<_GradientButton>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _ctrl;
-
-  @override
-  void initState() {
-    super.initState();
-    _ctrl = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 100),
-      lowerBound: 0.97,
-      upperBound: 1.0,
-    )..value = 1.0;
-  }
-
-  @override
-  void dispose() {
-    _ctrl.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTapDown: (_) => _ctrl.reverse(),
-      onTapUp: (_) {
-        _ctrl.forward();
-        widget.onTap();
-      },
-      onTapCancel: () => _ctrl.forward(),
-      child: ScaleTransition(
-        scale: _ctrl,
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 16),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors: widget.colors),
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: widget.colors.first.withValues(alpha: 0.4),
-                blurRadius: 12,
-                offset: const Offset(0, 4),
-              ),
-            ],
-          ),
-          child: Center(
-            child: Text(
-              widget.label,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
-            ),
-          ),
-        ),
       ),
     );
   }

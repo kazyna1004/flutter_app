@@ -5,8 +5,8 @@
 // ═══════════════════════════════════════════════════════════════════════════
 
 import 'package:flutter/material.dart';
-import '../main.dart';
 import '../models/game_data.dart';
+import '../core/router.dart';
 import '../widgets/eco_pet_widget.dart';
 import '../widgets/truck_widget.dart';
 

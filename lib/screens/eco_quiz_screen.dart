@@ -6,6 +6,7 @@
 
 import 'package:flutter/material.dart';
 import '../models/game_data.dart';
+import '../widgets/gradient_button.dart';
 
 /// Экран эко-викторины
 /// Игрок отвечает на вопросы об окружающей среде
@@ -311,7 +312,7 @@ class _EcoQuizScreenState extends State<EcoQuizScreen> {
                     const SizedBox(height: 28),
                     SizedBox(
                       width: double.infinity,
-                      child: _GradBtn(
+                      child: GradientButton(
                         label: 'Back to Hub 🏠',
                         colors: const [Color(0xFF60a5fa), Color(0xFF06b6d4)],
                         onTap: () => widget.onComplete(_score),
@@ -320,43 +321,6 @@ class _EcoQuizScreenState extends State<EcoQuizScreen> {
                   ],
                 ),
               ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-/// Кнопка с градиентом
-class _GradBtn extends StatelessWidget {
-  final String label;
-  final List<Color> colors;
-  final VoidCallback onTap;
-
-  const _GradBtn({
-    required this.label,
-    required this.colors,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 14),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: colors),
-          borderRadius: BorderRadius.circular(18),
-        ),
-        child: Center(
-          child: Text(
-            label,
-            style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
             ),
           ),
         ),
