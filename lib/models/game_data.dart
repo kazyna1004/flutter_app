@@ -55,6 +55,7 @@ class LocationInfo {
   final List<int> gradientColors;   // Цвета градиента кнопки
   final List<int> bgGradientColors; // Цвета фона
   final String emoji;               // Эмодзи
+  final String backgroundAsset;     // Фоновое изображение
 
   const LocationInfo({
     required this.id,
@@ -63,6 +64,7 @@ class LocationInfo {
     required this.gradientColors,
     required this.bgGradientColors,
     required this.emoji,
+    required this.backgroundAsset,
   });
 }
 
@@ -223,6 +225,7 @@ const List<LocationInfo> locations = [
     gradientColors: [0xFF34d399, 0xFF059669],
     bgGradientColors: [0xFFbbf7d0, 0xFFd1fae5, 0xFFbae6fd],
     emoji: '🌳',
+    backgroundAsset: 'assets/park.png',
   ),
   LocationInfo(
     id: 'city',
@@ -231,6 +234,7 @@ const List<LocationInfo> locations = [
     gradientColors: [0xFF60a5fa, 0xFF2563eb],
     bgGradientColors: [0xFFbfdbfe, 0xFFf1f5f9, 0xFFe2e8f0],
     emoji: '🏙️',
+    backgroundAsset: 'assets/city.png',
   ),
   LocationInfo(
     id: 'forest',
@@ -239,6 +243,7 @@ const List<LocationInfo> locations = [
     gradientColors: [0xFF2dd4bf, 0xFF16a34a],
     bgGradientColors: [0xFF86efac, 0xFFccfbf1, 0xFFd1fae5],
     emoji: '🌲',
+    backgroundAsset: 'assets/forest.png',
   ),
 ];
 

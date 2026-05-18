@@ -21,3 +21,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/park.png
+    - assets/city.png
+    - assets/forest.png
